@@ -182,7 +182,7 @@ class _HomePageState extends State<HomePage> {
     final r = resultado;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Calha Parshall'), centerTitle: true),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -193,10 +193,26 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(16),
                 child: Column(
                   children: [
-                    const Icon(Icons.water_drop, size: 64, color: Colors.blue),
+                    Image.asset(
+                      'assets/icon/umfg.png',
+                      height: 58,
+                      fit: BoxFit.contain,
+                    ),
                     const SizedBox(height: 12),
-                    const Text(
-                      'Dimensionamento da Calha Parshall',
+                    const Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(text: 'Dimensionamento da Calha Parshall '),
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: Icon(
+                              Icons.water_drop,
+                              size: 27,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ],
+                      ),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 22,
